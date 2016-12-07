@@ -17,7 +17,7 @@
         <a href="#!" class="brand-logo center">Tâches</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="<c:url value="/searchForm"/>" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">search</i></a></li>
+          <li><a href="<c:url value="/search"/>" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">search</i></a></li>
           <li><a href="<c:url value="/categories"/>">Catégories</a></li>
           <li><a href="<c:url value="/tasks"/>">Tâches</a></li>
         </ul>

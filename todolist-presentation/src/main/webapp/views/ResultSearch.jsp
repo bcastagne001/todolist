@@ -43,6 +43,12 @@
         </div>
       </div>
 	</c:forEach>
+	
+    <div class="row">
+      <div class="col s12 m12">
+	    <button type="submit" class="waves-effect waves-light btn red">Terminer toutes les tâches</button>
+	  </div>
+	</div>
             	
 	<script type="text/javascript" src="<c:url value="/resources/js/jquery-3.1.1.min.js"/>"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/materialize.min.js"/>"></script>
