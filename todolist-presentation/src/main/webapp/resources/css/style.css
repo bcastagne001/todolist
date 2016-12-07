@@ -5,6 +5,6 @@ nav {
 .btn-floating {
 	position: fixed;
     bottom: 10px;
-    right: -4px;
+    right: 11.25px;
     z-index: 10;
 }

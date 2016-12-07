@@ -26,29 +26,38 @@
         </ul>
       </div>
     </nav>
-
-	<c:forEach items="${tasks}" var="task">
-      <div class="row">
-        <div class="col s12 m12">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">${task.label}</span>
-              <p>Commence le <fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${task.beginningDate}" /></p>
-              <p>Termine le <fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${task.previsionalEndingDate}" /></p>
-            </div>
-            <div class="card-action right-align">
-              <a href="#" class="waves-effect waves-light btn orange">Terminer la tâche</a>
-            </div>
+    
+    <c:choose>
+      <c:when test="${tasks.isEmpty()}">
+        <div class="row">
+          <div class="col s12 m12">
+            <p class="center-align"><i class="large material-icons">warning</i></p>
+            <h4 class="center-align">Aucune tâche n'a été trouvée pour la période sélectionnée</h4>
           </div>
         </div>
-      </div>
-	</c:forEach>
-	
-    <div class="row">
-      <div class="col s12 m12">
-	    <button type="submit" class="waves-effect waves-light btn red">Terminer toutes les tâches</button>
-	  </div>
-	</div>
+	  </c:when>
+	  <c:otherwise>
+        <div class="row">
+          <div class="col s12 m12">
+	        <button type="submit" class="waves-effect waves-light btn red">Terminer toutes les tâches</button>
+          </div>
+        </div>
+
+        <c:forEach items="${tasks}" var="task">
+          <div class="row">
+            <div class="col s12 m12">
+              <div class="card grey lighten-5">
+                <div class="card-content blue-grey-text darken-4">
+                  <span class="card-title">${task.label}</span><hr>
+                  <p>Date de début : <fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${task.beginningDate}" /></p>
+                  <p>Date de fin prévisionnelle : <fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${task.previsionalEndingDate}" /></p>
+                </div>
+             </div>
+            </div>
+          </div>
+	    </c:forEach>
+	  </c:otherwise>
+    </c:choose>
             	
 	<script type="text/javascript" src="<c:url value="/resources/js/jquery-3.1.1.min.js"/>"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/materialize.min.js"/>"></script>

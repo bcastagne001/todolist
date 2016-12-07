@@ -27,13 +27,9 @@
       </div>
     </nav>
     
-    <div class="input-field col s12">
-    
-  </div>
     <div class="row">
 	  <form class="col s6 offset-s3" name="searchForm" action="/todolist-presentation/results">
 	    <div class="row">
-	      <label>Date de début : </label>
           <select name="userId">
             <option value="" disabled selected>Sélectionnez un utilisateur</option>
             <option value="1">Moi</option>
@@ -41,7 +37,7 @@
 	    </div>
 	    <div class="row">
 	      <label>Date de début : </label><input type="date" class="datepicker" name="beginningIntervalDate" required>
-	      <label>Date de fin : </label><input type="date" class="datepicker" name="endingIntervalDate" required>
+	      <label>Date de fin prévisionnelle : </label><input type="date" class="datepicker" name="endingIntervalDate" required>
 	    </div>
 	    <div class="row">
 	      <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">search</i>Rechercher</button>

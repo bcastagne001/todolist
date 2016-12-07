@@ -17,7 +17,6 @@
         <a href="#!" class="brand-logo center">Tâches</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="<c:url value="/search"/>" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">search</i></a></li>
           <li><a href="<c:url value="/categories"/>">Catégories</a></li>
           <li><a href="<c:url value="/tasks"/>">Tâches</a></li>
         </ul>
@@ -31,20 +30,33 @@
 	<c:forEach items="${tasks}" var="task">
       <div class="row">
         <div class="col s12 m12">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">${task.label}</span>
-              <p>Commence le <fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${task.beginningDate}" /></p>
-              <p>Termine le <fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${task.previsionalEndingDate}" /></p>
-            </div>
-            <div class="card-action right-align">
-              <a href="#" class="waves-effect waves-light btn orange">Terminer la tâche</a>
-            </div>
-          </div>
+          <c:choose>
+            <c:when test="${not empty task.endingDate}">
+              <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">${task.label}</span><hr>
+                  <p>Date de début : <fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${task.beginningDate}" /></p>
+                  <p>Date de fin prévisionnelle : <fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${task.previsionalEndingDate}" /></p>
+                  <p>Tâche terminée le <fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${task.endingDate}" /></p>
+                </div>
+              </div>
+            </c:when>
+            <c:otherwise>
+              <div class="card grey lighten-5">
+                <div class="card-content blue-grey-text darken-4">
+                  <span class="card-title">${task.label}</span><hr>
+                  <p>Date de début : <fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${task.beginningDate}" /></p>
+                  <p>Date de fin prévisionnelle : <fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${task.previsionalEndingDate}" /></p>
+                </div>
+              </div>
+            </c:otherwise>
+          </c:choose>
         </div>
       </div>
 	</c:forEach>
-            	
+    
+    <a href="<c:url value="/search"/>" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">search</i></a>
+    
 	<script type="text/javascript" src="<c:url value="/resources/js/jquery-3.1.1.min.js"/>"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/materialize.min.js"/>"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/main.js"/>"></script>
