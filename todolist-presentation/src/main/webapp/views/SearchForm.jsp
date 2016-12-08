@@ -30,14 +30,14 @@
     <div class="row">
 	  <form class="col s6 offset-s3" name="searchForm" action="/todolist-presentation/results">
 	    <div class="row">
-          <select name="userId">
+          <select name="userId" required>
             <option value="" disabled selected>Sélectionnez un utilisateur</option>
             <option value="1">Moi</option>
           </select>
 	    </div>
 	    <div class="row">
-	      <label>Date de début : </label><input type="date" class="datepicker" name="beginningIntervalDate" required>
-	      <label>Date de fin prévisionnelle : </label><input type="date" class="datepicker" name="endingIntervalDate" required>
+	      <label>Date de début : </label><input type="date" class="datepicker" name="beginningIntervalDate" placeholder="Entrez une date" required>
+	      <label>Date de fin prévisionnelle : </label><input type="date" class="datepicker" name="endingIntervalDate" placeholder="Entrez une date" required>
 	    </div>
 	    <div class="row">
 	      <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">search</i>Rechercher</button>
