@@ -35,14 +35,18 @@ public class TaskController {
 		return page;
 	}
 	
-	@RequestMapping(value="/results", method=RequestMethod.GET)
+	@RequestMapping(value="/results", method=RequestMethod.POST)
 	public ModelAndView listNotEndedUserTasksInAnIntervalOfDates(@RequestParam long userId, @RequestParam Date beginningIntervalDate, @RequestParam Date endingIntervalDate) {
+		this.beginningIntervalDate = beginningIntervalDate;
+		this.endingIntervalDate = endingIntervalDate;
+		
 		ModelAndView page = new ModelAndView("ResultSearch");
 		page.addObject("tasks", taskService.listNotEndedUserTasksInAnIntervalOfDates(userId, beginningIntervalDate, endingIntervalDate));
+		page.addObject("userId", userId);
 		return page;
 	}
 	
-	@RequestMapping(value="/endAllTasks/{userId}", method=RequestMethod.GET)
+	@RequestMapping(value="/endAllTasks/{userId}", method=RequestMethod.POST)
 	public ModelAndView endAllTasksInList(@PathVariable long userId) {
 		taskService.endAllTasksInList(taskService.listNotEndedUserTasksInAnIntervalOfDates(userId, beginningIntervalDate, endingIntervalDate));
 		return new ModelAndView("redirect:" + "/tasks");
