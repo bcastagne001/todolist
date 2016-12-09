@@ -18,4 +18,6 @@ public interface TaskService {
 
 	List<Task> listNotEndedUserTasksInAnIntervalOfDates(long idUser, Date beginningIntervalDate, Date endingIntervalDate);
 
+	void endAllTasksInList(List<Task> listNotEndedUserTasks);
+
 }

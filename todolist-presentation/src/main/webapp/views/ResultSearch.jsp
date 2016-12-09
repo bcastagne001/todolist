@@ -39,7 +39,9 @@
 	  <c:otherwise>
         <div class="row">
           <div class="col s12 m12">
-	        <button type="submit" class="waves-effect waves-light btn red">Terminer toutes les tâches</button>
+            <form action="/todolist-presentation/tasks/endAllTasks/${userId}" method="get">
+	          <button type="submit" class="waves-effect waves-light btn red">Terminer toutes les tâches</button>
+	        </form>
           </div>
         </div>
 

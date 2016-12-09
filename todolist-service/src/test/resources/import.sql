@@ -29,3 +29,6 @@ INSERT INTO task(label, previsionalEndingDate, id_user) VALUES('testFind3lastTas
 INSERT INTO user(name, USER_TYPE) VALUES('ListNotEndedUserTasksInAnIntervalOfDates', 'USER_FREE')
 -- ID_TASK = 7L
 INSERT INTO task(label, previsionalEndingDate, id_user) VALUES('testFind3lastTask7DB', '2016-11-22 09:36:15', 3);
+-- testAddTaskWithLessThanTenTasksForFreeUser
+-- ID_USER = 4L
+INSERT INTO user(name, USER_TYPE) VALUES('ListNotEndedUserTasksInAnIntervalOfDates', 'USER_FREE')

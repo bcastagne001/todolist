@@ -55,7 +55,7 @@
       </div>
 	</c:forEach>
     
-    <a href="<c:url value="/search"/>" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">search</i></a>
+    <a href="<c:url value="tasks/search"/>" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">search</i></a>
     
 	<script type="text/javascript" src="<c:url value="/resources/js/jquery-3.1.1.min.js"/>"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/materialize.min.js"/>"></script>

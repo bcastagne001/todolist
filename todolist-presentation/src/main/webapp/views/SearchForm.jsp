@@ -28,7 +28,7 @@
     </nav>
     
     <div class="row">
-	  <form class="col s6 offset-s3" name="searchForm" action="/todolist-presentation/results">
+	  <form class="col s6 offset-s3" name="searchForm" action="/todolist-presentation/tasks/results">
 	    <div class="row">
           <select name="userId" required>
             <option value="" disabled selected>Sélectionnez un utilisateur</option>

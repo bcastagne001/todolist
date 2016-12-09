@@ -42,7 +42,8 @@ CREATE TABLE `task` (
   `id_task` bigint(20) NOT NULL,
   `label` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `beginningDate` date NOT NULL,
-  `endingDate` date NOT NULL,
+  `endingDate` date,
+  `previsionalEndingDate` date NOT NULL,
   `id_category` int(11) NOT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -51,9 +52,12 @@ CREATE TABLE `task` (
 -- Contenu de la table `task`
 --
 
-INSERT INTO `task` (`id_task`, `label`, `beginningDate`, `endingDate`, `id_category`, `id_user`) VALUES
-(1, 'Tache de test', '2016-10-18', '2016-10-20', 1, 1),
-(2, 'Tache coucou', '2016-11-02', '2016-11-03', 1, 1);
+INSERT INTO `task` (`id_task`, `label`, `beginningDate`, `endingDate`, `previsionalEndingDate`, `id_category`, `id_user`) VALUES
+(1, 'Tache de test', '2016-10-18', '2016-10-21', '2016-10-20', 1, 1),
+(2, 'Tache coucou', '2016-11-02', '2016-11-02', '2016-11-03', 1, 1),
+(3, 'Troisieme tache', '2016-11-20', null, '2016-11-24', 1, 1),
+(4, 'Quatrieme tache', '2016-11-28', null, '2016-11-30', 1, 1),
+(5, 'Cinquieme tache', '2016-12-01', null, '2016-12-04', 1, 1);
 
 -- --------------------------------------------------------
 

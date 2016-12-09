@@ -17,6 +17,7 @@ import fr.icdc.dei.todolist.persistence.entity.UserFree;
 
 public class TaskServiceTest extends AbstractServiceTest {
 	
+	private static final long ID_USER_END_ALL_TASKS = 4L;
 	private static final int INTERVAL_DATE_MONTH = 10;
 	private static final int INTERVAL_DATE_YEAR = 2016;
 	private static final long ID_TASK_ENDING_IN_AN_INTERVAL_OF_DATES = 6L;
@@ -75,5 +76,11 @@ public class TaskServiceTest extends AbstractServiceTest {
 	@Test
 	public void testListNotEndedUserTasksInAnIntervalOfDates() {
 		assertFalse(taskService.listNotEndedUserTasksInAnIntervalOfDates(ID_USER, BEGINNING_INTERVAL_DATE, ENDING_INTERVAL_DATE).isEmpty());
+	}
+	
+	@Test
+	public void testEndAllTasksInList() {
+		taskService.endAllTasksInList(taskService.listNotEndedUserTasksInAnIntervalOfDates(ID_USER_END_ALL_TASKS, BEGINNING_INTERVAL_DATE, ENDING_INTERVAL_DATE));
+		assertTrue(taskService.listNotEndedUserTasksInAnIntervalOfDates(ID_USER_END_ALL_TASKS, BEGINNING_INTERVAL_DATE, ENDING_INTERVAL_DATE).isEmpty());
 	}
 }
